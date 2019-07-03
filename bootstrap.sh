@@ -41,3 +41,10 @@ echo ''
 if [[ $REPLY =~ ^[Yy]$ ]] && [ ! -d $HOME/.screen ]; then
   mkdir -v "$HOME/.screen"
 fi
+
+read -p 'Install bash-git-prompt? (y/n) ' -n 1
+echo ''
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  git clone https://github.com/magicmonty/bash-git-prompt.git $HOME/.bash-git-prompt --depth=1
+fi
+
