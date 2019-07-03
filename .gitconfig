@@ -1,0 +1,24 @@
+[user]
+	name  = Samuli Asmala
+	email = samuli.asmala@gmail.com
+[alias]
+	df    = diff --color-words
+	s     = status -s
+	st    = status
+	f     = fetch --all --verbose
+	dfs   = diff --color-words --staged
+	unstage = reset HEAD --
+	a     = add
+	c     = commit -m
+	ca    = commit -a -m
+	last  = log -1 HEAD
+	undo  = reset HEAD^
+	l     = log --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+	lg    = !"git l  --graph"
+	lga   = !"git l  --graph --all"
+	dfm   = diff --color-moved
+	dfms  = diff --color-moved --staged
+	addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
+	split = "!f() { git lg \"$1\" \"$2\" `git merge-base \"$1\" \"$2\"`^!; }; f"
+[merge]
+	tool  = meld
