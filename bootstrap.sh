@@ -39,7 +39,7 @@ done
 read -p "Create local socket directory for screen to $HOME/.screen? (y/n) " -n 1
 echo ''
 if [[ $REPLY =~ ^[Yy]$ ]] && [ ! -d $HOME/.screen ]; then
-  mkdir -v "$HOME/.screen"
+  mkdir -v "$HOME/.screen" && chmod 700 "$HOME/.screen"
 fi
 
 read -p 'Install bash-git-prompt? (y/n) ' -n 1
