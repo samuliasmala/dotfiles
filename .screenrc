@@ -1,4 +1,10 @@
 startup_message off
+#set the scrollback to 5000 lines
+defscrollback 5000
+
+# easier scroll
+bindkey "^[[5~" eval 'copy' 'stuff ^b'  # PgUp   | Enter copy/scrollback mode and page up
+bindkey "^[[6~" eval 'copy' 'stuff ^f'  # PgDown | Enter copy/scrollback mode and page down
 
 #change the hardstatus settings to give an window list at the bottom of the
 #screen, with the time and date and with the current window highlighted
