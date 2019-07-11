@@ -8,6 +8,8 @@
 	f     = fetch --all --verbose
 	dfs   = diff --color-words --staged
 	unstage = reset HEAD --
+	p     = pull --ff-only
+        prb   = pull --rebase
 	a     = add
 	c     = commit -m
 	ca    = commit -a -m
