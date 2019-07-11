@@ -25,3 +25,5 @@
 	split = "!f() { git lg \"$1\" \"$2\" `git merge-base \"$1\" \"$2\"`^!; }; f"
 [merge]
 	tool  = meld
+[core]
+	autocrlf = input
