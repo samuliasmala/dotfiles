@@ -11,8 +11,10 @@
 	p     = pull --ff-only
         prb   = pull --rebase
 	a     = add
-	c     = commit -m
-	ca    = commit -a -m
+	c     = commit
+	cm    = commit -m
+	ca    = commit -a
+	cam   = commit -a -m
 	last  = log -1 HEAD
 	undo  = reset HEAD^
 	# Find out which remote branch a local branch is tracking
