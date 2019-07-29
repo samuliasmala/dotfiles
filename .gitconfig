@@ -28,6 +28,6 @@
 	addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 	split = "!f() { git lg \"$1\" \"$2\" `git merge-base \"$1\" \"$2\"`^!; }; f"
 [merge]
-	tool  = meld
+	conflictstyle = diff3
 [core]
 	autocrlf = input
