@@ -21,7 +21,7 @@
 	track = !"git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)"
 	l     = log --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
 	# Show current branch and the remote branch it's tracking
-	lg    = !"git l --graph HEAD $(git track)"
+	lg    = !"git l --graph HEAD $(git track) master"
 	lga   = !"git l --graph --all"
 	dfm   = diff --color-moved
 	dfms  = diff --color-moved --staged
