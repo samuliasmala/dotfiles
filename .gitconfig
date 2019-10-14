@@ -2,11 +2,11 @@
 	name  = Samuli Asmala
 	email = samuli.asmala@gmail.com
 [alias]
-	df    = diff --color-words
+	df    = diff
 	s     = status -s
 	st    = status
 	f     = fetch --all --verbose
-	dfs   = diff --color-words --staged
+	dfs   = !"git df --staged"
 	unstage = reset HEAD --
 	p     = pull --ff-only
         prb   = pull --rebase
@@ -31,3 +31,18 @@
 	conflictstyle = diff3
 [core]
 	autocrlf = input
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
