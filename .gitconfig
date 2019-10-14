@@ -8,8 +8,9 @@
 	f     = fetch --all --verbose
 	dfs   = !"git df --staged"
 	unstage = reset HEAD --
-	p     = pull --ff-only
-        prb   = pull --rebase
+	p     = pull
+	prb   = pull --rebase
+	pmrg  = pull --no-ff
 	a     = add
 	c     = commit
 	cm    = commit -m
@@ -46,3 +47,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[pull]
+	ff = only
