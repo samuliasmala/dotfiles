@@ -11,6 +11,8 @@
 	p     = pull
 	prb   = pull --rebase
 	pmrg  = pull --no-ff
+	b     = branch
+	co    = checkout
 	a     = add
 	c     = commit
 	cm    = commit -m
