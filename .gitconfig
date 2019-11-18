@@ -18,6 +18,8 @@
 	cm    = commit -m
 	ca    = commit -a
 	cam   = commit -a -m
+	cf    = commit --fixup
+	reb   = rebase --interactive --autosquash
 	last  = log -1 HEAD
 	undo  = reset HEAD^
 	sub   = submodule update --remote
