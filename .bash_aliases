@@ -14,8 +14,10 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls'
 alias g='git'
+alias c='gcloud'
 alias diff='diff --color=auto'
 alias dfd='df -h | grep -e "/dev/sd" -e "Filesystem" --color=never'
 
 # Command aliases
 alias o='xdg-open'
+alias date_update='sudo timedatectl set-ntp off && sudo timedatectl set-ntp on'
