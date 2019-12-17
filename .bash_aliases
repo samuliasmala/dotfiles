@@ -21,3 +21,11 @@ alias dfd='df -h | grep -e "/dev/sd" -e "Filesystem" --color=never'
 # Command aliases
 alias o='xdg-open'
 alias date_update='sudo timedatectl set-ntp off && sudo timedatectl set-ntp on'
+
+# setup autocompletion for git alias
+if [ -f "/usr/share/bash-completion/completions/git" ]; then
+  source /usr/share/bash-completion/completions/git
+  __git_complete g _git
+else
+  echo "Error loading git completions"
+fi
