@@ -19,10 +19,11 @@
 	ca    = commit -a
 	cam   = commit -a -m
 	cf    = commit --fixup
+	amend = commit --amend --no-edit
 	reb   = rebase --interactive --autosquash
 	last  = log -1 HEAD
 	undo  = reset HEAD^
-	sub   = submodule update --remote
+	sub   = submodule update --checkout
 	# Find out which remote branch a local branch is tracking
 	track = !"git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)"
 	l     = log --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
@@ -33,6 +34,7 @@
 	dfms  = diff --color-moved --staged
 	addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 	split = "!f() { git l --graph \"$1\" \"$2\" `git merge-base \"$1\" \"$2\"`^!; }; f"
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [merge]
 	conflictstyle = diff3
 [core]
