@@ -130,8 +130,8 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
 fi
 
 # Apply machine specific settings
-if [ -f $HOME/.bash_local ]; then
-    . $HOME/.bash_local
+if [ -f $HOME/.bashrc_local ]; then
+    . $HOME/.bashrc_local
 fi
 
 # Use local socket directory for screen
