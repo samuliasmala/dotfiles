@@ -23,7 +23,7 @@
 	reb   = rebase --interactive --autosquash
 	last  = log -1 HEAD
 	undo  = reset HEAD^
-	sub   = submodule update --checkout
+	sub   = submodule update --checkout --remote
 	# Find out which remote branch a local branch is tracking
 	track = !"git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)"
 	l     = log --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
