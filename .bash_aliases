@@ -17,6 +17,7 @@ alias g='git'
 alias c='gcloud'
 alias diff='diff --color=auto'
 alias dfd='df -h | grep -e "/dev/sd" -e "Filesystem" --color=never'
+alias psx='ps axfo pid,euser,egroup,args'
 
 # Command aliases
 alias o='xdg-open'
