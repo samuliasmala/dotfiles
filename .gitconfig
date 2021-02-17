@@ -1,70 +1,70 @@
 [user]
-	name  = Samuli Asmala
-	email = samuli.asmala@gmail.com
+  name  = Samuli Asmala
+  email = samuli.asmala@gmail.com
 [alias]
-	df    = diff
-	s     = status -s
-	st    = status
-	f     = fetch --all --verbose
-	dfs   = !"git df --staged"
-	unstage = reset HEAD --
-	p     = pull
-	prb   = pull --rebase
-	pmrg  = pull --no-ff
-	b     = branch
-	co    = checkout
-	a     = add
-	c     = commit
-	cm    = commit -m
-	ca    = commit -a
-	cam   = commit -a -m
-	cf    = commit --fixup
-	amend = commit --amend --no-edit
-	reb   = rebase --interactive --autosquash
-	last  = log -1 HEAD
-	undo  = reset HEAD^
-	sub   = submodule update --checkout --remote
-	# Find out which remote branch a local branch is tracking
-	track = !"git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)"
-	# Show current branch using linear view
-	l     = log --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
-	# Show current branch and the remote branch it's tracking
-	lg    = ! git l --graph HEAD $(git track)
-	# Show current branch and master/main branch and remote branches they are tracking
-	lgm   = ! git l --graph --glob=*/main --glob=*/master HEAD $(git track)
-	# Show all local branches
-	lgl   = ! git l --graph --exclude=refs/remotes/* --all
-	# Show all branches
-	lga   = !"git l --graph --all"
+  df    = diff
+  s     = status -s
+  st    = status
+  f     = fetch --all --verbose
+  dfs   = !"git df --staged"
+  unstage = reset HEAD --
+  p     = pull
+  prb   = pull --rebase
+  pmrg  = pull --no-ff
+  b     = branch
+  co    = checkout
+  a     = add
+  c     = commit
+  cm    = commit -m
+  ca    = commit -a
+  cam   = commit -a -m
+  cf    = commit --fixup
+  amend = commit --amend --no-edit
+  reb   = rebase --interactive --autosquash
+  last  = log -1 HEAD
+  undo  = reset HEAD^
+  sub   = submodule update --checkout --remote
+  # Find out which remote branch a local branch is tracking
+  track = !"git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)"
+  # Show current branch using linear view
+  l     = log --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+  # Show current branch and the remote branch it's tracking
+  lg    = ! git l --graph HEAD $(git track)
+  # Show current branch and master/main branch and remote branches they are tracking
+  lgm   = ! git l --graph --glob=*/main --glob=*/master HEAD $(git track)
+  # Show all local branches
+  lgl   = ! git l --graph --exclude=refs/remotes/* --all
+  # Show all branches
+  lga   = !"git l --graph --all"
 
   # From https://stackoverflow.com/a/21910335/1317406
   ll    = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   ld    = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
   ls    = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 
-	dfm   = diff --color-moved
-	dfms  = diff --color-moved --staged
-	addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
-	split = "!f() { git l --graph \"$1\" \"$2\" `git merge-base \"$1\" \"$2\"`^!; }; f"
-	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+  dfm   = diff --color-moved
+  dfms  = diff --color-moved --staged
+  addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
+  split = "!f() { git l --graph \"$1\" \"$2\" `git merge-base \"$1\" \"$2\"`^!; }; f"
+  alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [merge]
-	conflictstyle = diff3
+  conflictstyle = diff3
 [core]
-	autocrlf = input
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  autocrlf = input
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
-	ui = true
+  ui = true
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
 [color "diff"]
-	meta = 11
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+  meta = 11
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
 [pull]
-	ff = only
+  ff = only
