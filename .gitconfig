@@ -36,6 +36,8 @@
   lgl   = ! git l --graph --exclude=refs/remotes/* --all
   # Show all branches
   lga   = !"git l --graph --all"
+  # Show all branches ordered by latest change
+  modified = for-each-ref --sort=-committerdate refs/heads refs/remotes/ --format='%(color:bold blue)%(objectname:short)%(color:reset) - %(color:bold green)(%(committerdate:relative))%(color:reset) - %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname)'
 
   # From https://stackoverflow.com/a/21910335/1317406
   ll    = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
