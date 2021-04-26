@@ -49,6 +49,12 @@
   addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
   split = "!f() { git l --graph \"$1\" \"$2\" `git merge-base \"$1\" \"$2\"`^!; }; f"
   alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+  # Show local branches that do not exist on remote anymore
+  gone  = ! git branch -vv | grep 'gone]' | awk '{print $1}'
+  # Remove all local branches that do not exist on remote anymore
+  remove-gone = ! git branch -d $(git gone)
+  # Remove branch from origin
+  remove-origin = push -d origin
 [merge]
   conflictstyle = diff3
 [core]
@@ -70,3 +76,5 @@
   whitespace = red reverse
 [pull]
   ff = only
+[fetch]
+	prune = true
