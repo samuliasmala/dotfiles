@@ -53,13 +53,16 @@ fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-# When using screen set the title to screen_name@host
+# When using screen set the title to screen name stored in $STY
 case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-screen.xterm*|screen.rxvt*)
-    PS1="\[\e]0;${STY#*.}@\h\a\]$PS1"
+xterm*|rxvt*|screen.xterm*|screen.rxvt*)
+    if [[ "$TERM" =~ ^(xterm|rxvt) ]]; then
+        TERMINAL_TITLE="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]"
+    else
+        TERMINAL_TITLE="\[\e]0;${STY#*.}\a\]"
+    fi
+    PS1="$TERMINAL_TITLE$PS1"
+    GIT_PROMPT_END="\n\[\033[0;37m\]$(date +%H:%M)\[\033[0;0m\] \$ $TERMINAL_TITLE"
     ;;
 *)
     ;;
