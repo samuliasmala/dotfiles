@@ -26,7 +26,7 @@ alias date_update='sudo timedatectl set-ntp off && sudo timedatectl set-ntp on'
 # setup autocompletion for git alias
 if [ -f "/usr/share/bash-completion/completions/git" ]; then
   source /usr/share/bash-completion/completions/git
-  __git_complete g _git
+  __git_complete g __git_main
 else
   echo "Error loading git completions"
 fi
