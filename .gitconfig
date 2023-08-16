@@ -55,6 +55,8 @@
   remove-gone = ! git branch -d $(git gone)
   # Remove branch from origin
   remove-origin = push -d origin
+  # Diff to replace bash diff
+  bash-diff = diff -U0 --no-index
 [merge]
   conflictstyle = diff3
 [core]
