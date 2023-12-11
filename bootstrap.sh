@@ -9,6 +9,8 @@ DOTFILES=(
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
+mkdir -p "$HOME/.local/bin"
+
 read -p 'Set timezone to Finland? (y/n) ' -n 1
 echo ''
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -51,7 +53,6 @@ fi
 read -p 'Install diff-so-fancy to ~/.local/bin (required for .gitconfig)? (y/n) ' -n 1
 echo ''
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  mkdir -p "$HOME/.local/bin"
   wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy -O "$HOME/.local/bin/diff-so-fancy"
   chmod u+x "$HOME/.local/bin/diff-so-fancy"
 fi
