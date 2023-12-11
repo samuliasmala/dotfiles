@@ -15,9 +15,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   sudo timedatectl set-timezone Europe/Helsinki
 fi
 
-read -p 'Overwrite current dotfiles? (y/n) ' -n 1 OVERWRITE
+read -p 'Backup current dotfiles? (y/n) ' -n 1 BACKUP
 echo ''
-if [[ ! $OVERWRITE =~ ^[Yy]$ ]]; then
+if [[ ! $BACKUP =~ ^[Nn]$ ]]; then
   echo 'Current dotfiles are renamed to .bak'
 fi
 
@@ -26,7 +26,7 @@ for i in "${DOTFILES[@]}"; do
   echo ''
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     if [ -f "$HOME/$i" ]; then
-      if [[ $OVERWRITE =~ ^[Nn]$ ]]; then
+      if [[ ! $BACKUP =~ ^[Nn]$ ]]; then
         mv -v "$HOME/$i" "$HOME/$i.bak"
       else
         rm -v "$HOME/$i"
