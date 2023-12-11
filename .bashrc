@@ -131,6 +131,12 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 
+if [ -f "$HOME/.local/bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=0
+    source $HOME/.local/bash-git-prompt/gitprompt.sh
+fi
+
+# Old installation directory, kept for backward compatibility
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_ONLY_IN_REPO=0
     source $HOME/.bash-git-prompt/gitprompt.sh

@@ -42,10 +42,10 @@ if [[ $REPLY =~ ^[Yy]$ ]] && [ ! -d $HOME/.screen ]; then
   mkdir -v "$HOME/.screen" && chmod 700 "$HOME/.screen"
 fi
 
-read -p 'Install bash-git-prompt? (y/n) ' -n 1
+read -p 'Install bash-git-prompt to ~/.local? (y/n) ' -n 1
 echo ''
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  git clone https://github.com/magicmonty/bash-git-prompt.git $HOME/.bash-git-prompt --depth=1
+  git clone https://github.com/magicmonty/bash-git-prompt.git $HOME/.local/bash-git-prompt --depth=1
 fi
 
 read -p 'Install diff-so-fancy to ~/.local/bin (required for .gitconfig)? (y/n) ' -n 1
