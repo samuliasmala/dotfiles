@@ -58,6 +58,8 @@
   # Diff to replace bash diff
   bash-diff = diff -U0 --no-index
   stash-dates = stash list --date=local
+  # List all direct commits, i.e. exclude merge commits
+  l-no-pr = ! git l --first-parent --no-merges
 [merge]
   conflictstyle = diff3
 [core]
