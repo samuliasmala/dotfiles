@@ -62,7 +62,7 @@ xterm*|rxvt*|screen.xterm*|screen.rxvt*)
         TERMINAL_TITLE="\[\e]0;${STY#*.}\a\]"
     fi
     PS1="$TERMINAL_TITLE$PS1"
-    GIT_PROMPT_END="\n\[\033[0;37m\]$(date +%H:%M)\[\033[0;0m\] \$ $TERMINAL_TITLE"
+    GIT_PROMPT_END="\n\[\033[0;37m\]\$(date +%H:%M)\[\033[0;0m\] \$ $TERMINAL_TITLE"
     ;;
 *)
     ;;
