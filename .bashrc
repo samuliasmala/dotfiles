@@ -130,6 +130,9 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# Set nano as default editor
+export VISUAL="/usr/bin/nano"
+export EDITOR="$VISUAL"
 
 if [ -f "$HOME/.local/bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_ONLY_IN_REPO=0
