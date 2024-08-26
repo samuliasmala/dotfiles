@@ -60,6 +60,8 @@
   stash-dates = stash list --date=local
   # List all direct commits, i.e. exclude merge commits
   l-no-pr = ! git l --first-parent --no-merges
+  # List all PRs
+  l-pr = ! git l --merges --grep='Merge pull request'
 [merge]
   conflictstyle = diff3
 [core]
