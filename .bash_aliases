@@ -14,11 +14,11 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls'
 alias g='git'
-alias c='gcloud'
 alias diff='diff --color=auto'
 alias dfd='df -h | grep -e "/dev/sd" -e "Filesystem" --color=never'
 alias psx='ps axfo pid,euser,egroup,args'
 alias rm_junk='rm *:Zone.Identifier *:com.dropbox.attrs'
+alias less='less -R'
 
 # Command aliases
 alias o='xdg-open'
