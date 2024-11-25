@@ -58,10 +58,13 @@
   # Diff to replace bash diff
   bash-diff = diff -U0 --no-index
   stash-dates = stash list --date=local
+  # List all direct commits including merge commits, i.e. hide
+  # all commits behind a merge (handy for changelogs)
+  l-pr = ! git l --first-parent
   # List all direct commits, i.e. exclude merge commits
   l-no-pr = ! git l --first-parent --no-merges
   # List all PRs
-  l-pr = ! git l --grep='Merge pull request' --grep='^[0-9]*\\.[0-9]*\\.[0-9]*'
+  l-only-pr = ! git l --grep='Merge pull request' --grep='^[0-9]*\\.[0-9]*\\.[0-9]*'
 [merge]
   conflictstyle = diff3
 [core]
