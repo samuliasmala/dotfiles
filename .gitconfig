@@ -61,7 +61,7 @@
   # List all direct commits, i.e. exclude merge commits
   l-no-pr = ! git l --first-parent --no-merges
   # List all PRs
-  l-pr = ! git l --merges --grep='Merge pull request'
+  l-pr = ! git l --grep='Merge pull request' --grep='^[0-9]*\\.[0-9]*\\.[0-9]*'
 [merge]
   conflictstyle = diff3
 [core]
