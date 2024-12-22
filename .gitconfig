@@ -3,7 +3,7 @@
   email = samuli.asmala@gmail.com
 [alias]
   df    = diff
-  s     = status -s
+  s     = switch
   st    = status
   f     = fetch --all --verbose
   dfs   = !"git df --staged"
