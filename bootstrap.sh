@@ -54,6 +54,6 @@ fi
 read -p 'Install diff-so-fancy to ~/.local (required for .gitconfig)? (y/n) ' -n 1
 echo ''
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  git clone git@github.com:so-fancy/diff-so-fancy.git $HOME/.local/diff-so-fancy
+  git clone https://github.com/so-fancy/diff-so-fancy.git $HOME/.local/diff-so-fancy
   ln -s $HOME/.local/diff-so-fancy/diff-so-fancy $HOME/.local/bin/diff-so-fancy
 fi
