@@ -5,6 +5,7 @@
   df    = diff
   s     = switch
   st    = status
+  show-merge = show -m --first-parent
   f     = fetch --all --verbose
   dfs   = !"git df --staged"
   unstage = reset HEAD --
